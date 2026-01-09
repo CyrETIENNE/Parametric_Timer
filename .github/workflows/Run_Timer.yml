@@ -16,7 +16,7 @@ jobs:
       - name: Docker Run Action
         uses: addnab/docker-run-action@v3
         with:
-          image: cyretienne/timerparam:v1.0
+          image: docker//cyretienne/timerparam:v1.0
           run: |
             python3 run.py
           
