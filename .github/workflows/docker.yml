@@ -13,11 +13,11 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-      - name: Run Docker container to compile assets
-        uses: addnab/docker-run-action@v3
-        with:
-          # Image
-          image: ${{ secrets.DOCKER_USERNAME }}/timerparam:v1.0
-          # Run command in container
-          run: ./ docker run cyretienne/timerparam:v1.0
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: docker://${{ secrets.DOCKER_USERNAME }}/timerparam:v1.0
+    steps:
+      - name: Execution
+        run: docker run ${{ secrets.DOCKER_USERNAME }}/timerparam:v1.0
           
