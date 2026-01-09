@@ -19,5 +19,5 @@ jobs:
           # Image
           image: ${{ secrets.DOCKER_USERNAME }}/timerparam:v1.0
           # Run command in container
-          run: docker run ${{ secrets.DOCKER_USERNAME }}/timerparam:v1.0
+          run: ./ docker run cyretienne/timerparam:v1.0
           
