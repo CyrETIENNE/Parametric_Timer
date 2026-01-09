@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install Docker
-        uses: papodaca/install-docker-action@v1
+        run: sudo apt remove docker docker-engine docker.io containerd runc
 
           
           
