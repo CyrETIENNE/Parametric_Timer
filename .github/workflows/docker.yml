@@ -19,5 +19,5 @@ jobs:
       image: docker://${{ secrets.DOCKER_USERNAME }}/timerparam:v1.0
     steps:
       - name: Execution
-        run: docker run ${{ secrets.DOCKER_USERNAME }}/timerparam:v1.0
+        run: python3 run.py
           
