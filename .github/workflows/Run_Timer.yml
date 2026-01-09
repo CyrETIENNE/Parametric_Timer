@@ -16,7 +16,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: docker://${{ secrets.DOCKER_USERNAME }}/timerparam:v1.0
+      image: docker://cyretienne/timerparam:v1.0
     steps:
       - name: Execution
         run: python3 run.py
