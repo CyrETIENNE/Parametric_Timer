@@ -15,7 +15,7 @@ jobs:
       - name: Install Docker Part 4
         run: sudo mkdir -p /etc/apt/keyrings
       - name: Install Docker Part 5
-        run: curl -fsSL https://download.docker.com/linux/ubuntu/gpg | \
+        run: curl -fsSL https://download.docker.com/linux/ubuntu/gpg
       - name: Install Docker Part 6
         run: sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 
