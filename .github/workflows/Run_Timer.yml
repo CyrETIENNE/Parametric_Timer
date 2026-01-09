@@ -20,8 +20,6 @@ jobs:
         with:
           # Docker image
           image: cyretienne/timerparam:v1.0
-          # Container name
-          name: dreamy_margulis
           # Command to run
           args: docker run
                 
