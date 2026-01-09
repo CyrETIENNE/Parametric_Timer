@@ -18,7 +18,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ${{ vars.DOCKER_USERNAME }}/sha256:d3c8940c2b65f4d86f3d22f29185af7c342a16bed00167e30e851f46bb59ba54
+          images: ${{ vars.DOCKER_USERNAME }}/ghdl/vunit
 
       - name: Log in to Docker Hub
         uses: docker/login-action@v3
