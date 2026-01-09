@@ -6,8 +6,12 @@ jobs:
     name: Compile assets
     runs-on: ubuntu-latest
     steps:
-      - name: Install Docker
+      - name: Install Docker Part 1
         run: sudo apt remove docker docker-engine docker.io containerd runc
+      - name: Install Docker Part 2
+        run: sudo apt update
+      - name: Install Docker Part 3
+        run: sudo apt install -y ca-certificates curl gnupg lsb-release
 
           
           
