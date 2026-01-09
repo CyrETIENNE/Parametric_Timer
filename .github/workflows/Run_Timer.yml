@@ -24,8 +24,6 @@ jobs:
           name: dreamy_margulis
           # Command to run
           args: docker run
-          # Options to pass to docker run
-          options: true 
                 
           
           
