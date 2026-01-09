@@ -13,10 +13,11 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-  build:
-    runs-on: ubuntu-latest
-    container:
-      image: docker://cyretienne/timerparam:v1.0
-    steps:
-      - name: Execution
-        uses: addnab/docker-run-action@4f65fabd2431ebc8d299f8e5a018d79a769ae185
+      - name: Docker Run Action
+        uses: addnab/docker-run-action@v3
+        with:
+          image: cyretienne/timerparam:v1.0
+          run: |
+            python3 run.py
+          
+          
