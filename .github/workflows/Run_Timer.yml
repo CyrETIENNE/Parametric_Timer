@@ -1,4 +1,4 @@
-name: Compile site assets
+name: Run TImer_docker
 on: push
 
 jobs:
@@ -6,17 +6,9 @@ jobs:
     name: Compile assets
     runs-on: ubuntu-latest
     steps:
-      - name: Check out the repo
-        uses: actions/checkout@v2
-      - name: Log in to Docker Hub
-        uses: docker/login-action@f4ef78c080cd8ba55a85445d5b36e214a81df20a
-        with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-      - name: Docker Run
-        uses: CoronelEzequiel/run-docker@v1
-        with:
-          image: 'Docker//cyretienne/timerparam:v1.0'
+      - name: Install Docker
+        uses: papodaca/install-docker-action@v1
+
           
           
                 
