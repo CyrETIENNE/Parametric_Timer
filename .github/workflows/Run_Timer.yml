@@ -1,13 +1,13 @@
-name: Run TImer_docker
+name: CI_Parameter_Timer
 on: push
 
 jobs:
   compile:
-    name: Compile assets
+    name: Build and Push Docker Image
     runs-on: ubuntu-latest
     steps:
-      - name: Test_timer
-        run: sudo docker run cyretienne/timerparam:v1.0
+      - name: Building Docker Image...
+        run: sudo docker build -t timer .
       
           
           
