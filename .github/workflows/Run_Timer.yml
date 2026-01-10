@@ -29,7 +29,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:  
       - name: Testing Timer
-        run: docker pull ${{ secrets.DOCKER_USERNAME }}/timer:v1.0
+        run: |
+          docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+          docker pull ${{ secrets.DOCKER_USERNAME }}/timer:v1.0
       - name: Running Timer
         run: docker run ${{ secrets.DOCKER_USERNAME }}/timer:v1.0
         
