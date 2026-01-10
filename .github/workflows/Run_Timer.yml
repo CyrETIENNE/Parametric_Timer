@@ -6,24 +6,6 @@ jobs:
     name: Compile assets
     runs-on: ubuntu-latest
     steps:
-      - name: Install Docker Part 1
-        run: sudo apt remove docker docker-engine docker.io containerd runc
-      - name: Install Docker Part 2
-        run: sudo apt update
-      - name: Install Docker Part 3
-        run: sudo apt install -y ca-certificates curl gnupg lsb-release
-      - name: Install Docker Part 4
-        run: sudo mkdir -p /etc/apt/keyrings
-      - name: Install Docker Part 5
-        run: curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-      - name: Install Docker Part 6
-        run: echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-      - name: Install Docker Part 7
-        run: sudo apt update
-      - name: Install Docker Part 8
-        run: sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-      - name: Install Docker Part 9
-        run: sudo docker run hello-world
       - name: Test_timer
         run: sudo docker run cyretienne/timerparam:v1.0
       
