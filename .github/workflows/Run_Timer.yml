@@ -4,7 +4,7 @@ on: push
 jobs:
   compile:
     name: Compile assets
-    runs-on: ubuntu:24.04
+    runs-on: ubuntu:24.04.01
     steps:
       - name: Install Docker Part 1
         run: sudo apt remove docker docker-engine docker.io containerd runc
