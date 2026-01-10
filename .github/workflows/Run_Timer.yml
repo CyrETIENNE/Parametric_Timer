@@ -6,6 +6,10 @@ jobs:
     name: Build and Push Docker Image
     runs-on: ubuntu-latest
     steps:
+      - name: Git Username
+        run: git config --global user.name "CyrETIENNE"
+      - name: Git Email
+        run: git config --global user.email "cyril.etienne7.2001@gmail.com"
       - name: Download Dockerfile from github
         run: git clone https://github.com/CyrETIENNE/Parametric_Timer
       
