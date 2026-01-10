@@ -1,7 +1,10 @@
 # Parametric_Timer
 
 ### Introduction
-This project test has been developed by **Cyril ETIENNE**, on a Windows 11 device, ***without using AI.***
+Author/engineer : **Cyril ETIENNE** 
+OS : **Windows 11** 
+AI use : **No**
+
 Let's deep dive into the details of this project.
 
 ### Part 1 : RTL Implementation of the parametric timer
