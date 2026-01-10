@@ -6,8 +6,12 @@ jobs:
     name: Build and Push Docker Image
     runs-on: ubuntu-latest
     steps:
+      - name: Download Dockerfile from github
+        run: wget https://github.com/CyrETIENNE/Parametric_Timer/Dockerfile
       - name: Building Docker Image...
         run: sudo docker build -t timer .
+      - name: Tagging Docker Image...
+        run: sudo docker tag timer ${{ secrets.DOCKER_USERNAME }}/timer:v1.0
       
           
           
