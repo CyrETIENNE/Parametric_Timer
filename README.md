@@ -1,11 +1,12 @@
 # Parametric_Timer
+>Author/engineer : **Cyril ETIENNE**
 
-### Introduction
->Author/engineer : **Cyril ETIENNE** 
->OS : **Windows 11** 
+>OS : **Windows 11**
+ 
 >AI use : **No**
 
-Let's deep dive into the details of this project.
+### Introduction
+The purpose of this project is to design a parametric timer using VHDL and testing it with VUnit and GHDL. Let's deep dive into the details of this project.
 
 ### Part 1 : RTL Implementation of the parametric timer
 The parametric timer has been designed in VHDL using **AMD's Vivado software**. The timer has been synthesized using **AMD's VIvado software** and is **synthesis-ready**. According to the specifications specified in the *coding_challenge_fpga_grad.pdf*, the timer VHDL module fully respects the provided entity interface.
