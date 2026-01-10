@@ -19,7 +19,7 @@ jobs:
       - name: push image to docker hub
         run: |
           docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-          docker push secrets.DOCKER_USERNAME/timer:v1.0
+          docker push cyretienne/timer:v1.0
           
           
                 
