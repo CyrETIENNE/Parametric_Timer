@@ -1,11 +1,6 @@
 name: CI_Parameter_Timer
 on:
   push:
-    branches:
-      - main
-    paths:
-      - 'Dockerfile'
-      - 'tb'
   workflow_dispatch:
 
 jobs:
@@ -25,9 +20,6 @@ jobs:
       - name: Remove local existing image 
         run: |
           docker rmi ${{ secrets.DOCKER_USERNAME }}/timer:v1.0
-  Test_Timer:
-    runs-on: ubuntu-latest
-    steps:  
       - name: Testing Timer
         run: |
           docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
