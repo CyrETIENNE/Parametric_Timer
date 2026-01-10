@@ -4,12 +4,12 @@ on: push
 jobs:
   compile:
     name: Compile assets
-    runs-on: ubuntu-latest
+    runs-on: ubuntu:24.04
     steps:
       - name: Install Docker Part 1
-        run: sudo apt update && sudo apt upgrade -y
-      - name: Install Docker Part 2
         run: sudo apt remove docker docker-engine docker.io containerd runc
+      - name: Install Docker Part 2
+        run: sudo apt update
       
           
           
