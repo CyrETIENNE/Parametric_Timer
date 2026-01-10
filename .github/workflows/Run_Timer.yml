@@ -7,9 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install Docker Part 1
-        run: wget https://download.docker.com/linux/ubuntu/gpg
+        run: sudo apt update && sudo apt upgrade -y
       - name: Install Docker Part 2
-        run: apt-key add gpg
+        run: sudo apt remove docker docker-engine docker.io containerd runc
       
           
           
