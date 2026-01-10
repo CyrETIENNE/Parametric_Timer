@@ -1,9 +1,9 @@
 # Parametric_Timer
 
 ### Introduction
-Author/engineer : **Cyril ETIENNE** 
-OS : **Windows 11** 
-AI use : **No**
+>Author/engineer : **Cyril ETIENNE** 
+>OS : **Windows 11** 
+>AI use : **No**
 
 Let's deep dive into the details of this project.
 
