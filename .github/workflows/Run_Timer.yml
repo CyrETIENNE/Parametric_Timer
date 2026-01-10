@@ -11,7 +11,21 @@ jobs:
         uses: actions/checkout@v4
       - name: build image
         run: docker build -t timer .
-        
+      - name: tag image
+        run: docker tag timer ${{ secrets.DOCKER_USERNAME }}/timer:v1.0
+      - name: push image to docker hub
+        run: |
+          docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+          docker push ${{ secrets.DOCKER_USERNAME }}/timer:v1.0
+      - name: Remove local existing image 
+        run: |
+          docker rmi ${{ secrets.DOCKER_USERNAME }}/timer:v1.0
+      - name: Testing Timer
+        run: |
+          docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+          docker pull ${{ secrets.DOCKER_USERNAME }}/timer:v1.0
+      - name: Running Timer
+        run: docker run ${{ secrets.DOCKER_USERNAME }}/timer:v1.0        
           
           
                 
