@@ -7,24 +7,24 @@ jobs:
   publish_images:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout
+      - name: Checkout
         uses: actions/checkout@v4
-      - name: build image
+      - name: Building Image
         run: docker build -t timer .
-      - name: tag image
+      - name: Tagging Image
         run: docker tag timer ${{ secrets.DOCKER_USERNAME }}/timer:v1.0
-      - name: push image to docker hub
+      - name: Pushing Image To Docker Hub
         run: |
           docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
           docker push ${{ secrets.DOCKER_USERNAME }}/timer:v1.0
-      - name: Remove local existing image 
+      - name: Remove Local Existing Image
         run: |
           docker rmi ${{ secrets.DOCKER_USERNAME }}/timer:v1.0
-      - name: Testing Timer
+      - name: Pulling Image
         run: |
           docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
           docker pull ${{ secrets.DOCKER_USERNAME }}/timer:v1.0
-      - name: Running Timer
+      - name: Running VUnit Tests
         run: docker run ${{ secrets.DOCKER_USERNAME }}/timer:v1.0        
           
           
