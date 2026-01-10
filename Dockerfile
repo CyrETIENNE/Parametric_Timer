@@ -1,10 +1,9 @@
 FROM ghdl/vunit:llvm-master
 
-WORKDIR /user/src/app
+WORKDIR /app
+
+COPY . /app
 
 RUN python3 run.py
 
-COPY . .
-
 CMD ["python3", "./run.py"]
-
