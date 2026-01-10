@@ -1,8 +1,11 @@
 FROM ghdl/vunit:llvm-master
 
-WORKDIR /app
+ENV GITHUB_USER = CyrETIENNE
+ENV REPO_NAME = Parametric_Timer
 
-COPY . /app
+RUN git clone https://GitHub.com/$GITHUB_USER/$REPO
+
+WORKDIR /app
 
 RUN python3 run.py
 
