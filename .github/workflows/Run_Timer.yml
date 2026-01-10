@@ -17,7 +17,7 @@ jobs:
       - name: build image
         run: docker build -t timer .
       - name: tag image
-        run: docker tag time ${{ secrets.DOCKER_USERNAME }}/timer:v1.0
+        run: docker tag timer ${{ secrets.DOCKER_USERNAME }}/timer:v1.0
       - name: push image to docker hub
         run: |
           docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin ${{ secrets.DOCKER_PASSWORD }}
