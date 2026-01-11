@@ -24,6 +24,15 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.numeric_std.ALL;
 use IEEE.math_real.ALL;
 
+-- Uncomment the following library declaration if using
+-- arithmetic functions with Signed or Unsigned values
+--use IEEE.NUMERIC_STD.ALL;
+
+-- Uncomment the following library declaration if instantiating
+-- any Xilinx leaf cells in this code.
+--library UNISIM;
+--use UNISIM.VComponents.all;
+
 entity timer is
     Generic (
         clk_freq_hz_g : natural := 100e6;    -- Clock Frequency. Must be in Hz
@@ -42,7 +51,7 @@ architecture Behavioral of timer is
 
     constant nb_clock_cycles : natural := (delay_g/1 ms)*clk_freq_hz_g/1e3;
     signal cpt_clock_cycles : natural := 0;
-    type timer_step is (INIT, START, DONE);
+    type timer_step is (INIT, START);
     signal current_timer_step : timer_step := INIT;
     
 begin
@@ -72,16 +81,13 @@ begin
                 when START =>
                     done_o <= '0';
                     if cpt_clock_cycles >= nb_clock_cycles then
+                        done_o <= '1';
                         cpt_clock_cycles <= 0;
-                        current_timer_step <= DONE; 
+                        current_timer_step <= INIT; 
                     else 
                         cpt_clock_cycles <= cpt_clock_cycles + 1;
                         current_timer_step <= START;
                     end if;
-                
-                when DONE =>
-                    done_o <= '1';
-                    current_timer_step <= INIT;
                     
                 when others =>
                     done_o <= '1';
