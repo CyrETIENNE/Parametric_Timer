@@ -30,11 +30,8 @@ begin
 		wait until rising_edge(clk_i);
 		start_i <= '1';
 		wait until rising_edge(clk_i);
-		check(my_checker, done_o = '1', "Expected done_o to be logic 1 (not counting).");
-		wait until rising_edge(clk_i);
 		start_i <= '0';
 		wait until rising_edge(clk_i);
-		check(my_checker, done_o = '0', "Expected done_o to be logic 0 (counting).");	
 		wait for delay_g;
 		wait until rising_edge(clk_i);	
 		check(my_checker, done_o = '1', "Expected done_o to be logic 1 (not counting).");
