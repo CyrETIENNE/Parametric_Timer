@@ -20,7 +20,7 @@ The purpose of this project is to design a clean and maintainable parametric tim
 1.2. Extract the .zip and place it wherever you want.
 
 ### 2. Install VUnit :
-2. On Windows 10/11 devices only, download *Python 3.13* from the Microsoft Store. Open the **command prompt** (by typing ***cmd*** on the Windows search bar), type in the following command : **pip3 install vunit_hdl**. (If an update of *pip3* is available, feel free to do it or not (not mandatory here)).
+2.1. On Windows 10/11 devices only, download *Python 3.13* from the Microsoft Store. Open the **command prompt** (by typing ***cmd*** on the Windows search bar), type in the following command : **pip3 install vunit_hdl**. (If an update of *pip3* is available, feel free to do it or not (not mandatory here)).
 
 ### 3. Download and Install GHDL :
 3.1. To download GHDL, we must look at their github page. For windows devices users, we must look for a precompiled GHDL file. Hence, download such a file following this link : **https://github.com/ghdl/ghdl/releases/download/v4.0.0/ghdl-MINGW32.zip**
