@@ -40,7 +40,7 @@ The purpose of this project is to design a clean and maintainable parametric tim
    10. GHDL has been successfully installed.
 
 ### 4. Run the tests
-4.1. Open *cmd*. Set the working directory by typing : *cd <path>* where <path> is the path of my Github repository that you downloaded and extracted.
+4.1. Open *cmd*. Set the working directory by typing : *cd #path#* where #path# is the path of my Github repository that you downloaded and extracted in the frist step.
 
 4.2. Run the tests by typing : *python3 run.py*
 
