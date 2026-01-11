@@ -1,0 +1,13 @@
+[options]
+mode prove
+depth 20
+
+[engines]
+smtbmc 
+
+[script]
+read_verilog -sv test_with_PSL.sv
+prep -top test_with_PSL
+
+[files]
+test_with_PSL.sv
