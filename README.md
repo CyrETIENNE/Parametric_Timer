@@ -6,42 +6,39 @@
 >AI use : **No**
 
 ### Introduction
-The purpose of this project is to design a parametric timer using VHDL and testing it with VUnit and GHDL. Let's deep dive into the details of this project.
-
-### Part 1 : RTL Implementation
-The parametric timer has been designed in VHDL using **AMD's Vivado software**. The timer has been synthesized using **AMD's VIvado software** and is **synthesis-ready**. According to the specifications specified in the *coding_challenge_fpga_grad.pdf*, the timer VHDL module fully respects the provided entity interface.
+The purpose of this project is to design a clean and maintainable parametric timer using VHDL and testing it with VUnit and GHDL. Let's deep dive into the details of this project.
 
 **Assumptions :** 
-1. *clk_freq_hz_g :* Most of the time *expressed in MHz* (as of 100e6 Hz for istance), must be *natural positive*.
-2. *delay_g :* Must be *expressed in ms* and must be *natural positive*.
+1. *clk_freq_hz_g : Expressed in MHz. Must be *natural positive*.
+2. *delay_g : Must be *expressed in ms* and must be *natural positive*.
 
-### Part 2 : Verification with VUnit
-Several testbenchs were designed using notepad++. These testbenchs fully respect the syntax requirements of VUnit. In order to proceed to the test using VUnit and GHDL, I installed both on my computer :
-1. **Installing VUnit :** From a Python IDE or directly in cmd (if you have Python3.13 installed on your device (can be downloaded through Windows Store)), type the following command : pip3 install vunit_hdl
-2. **Installing GHDL :**
-   1. **Downloading :** From the github of GHDL, we must look for a precompiled GHDL installation file (for Windows devices). Such file can be found in the following link : https://github.com/ghdl/ghdl/releases/download/v4.0.0/ghdl-MINGW32.zip
-   2. **GHDL file :** Extract the .zip file and place the extracted folder in your :C disk.
-   3. **Copy path to GHDL's bin folder :** In that folder, there is a bin folder. Copy the whole path to that bin folder.
-   4. **Add path to the system global path :** After that, you have to add the path to that folder to the global PATH of your system throught modifying your Windows System Environment Variables (by typing in your windows search bar, *"environment variables"*, then clicking on *"edit environment variables for your system"*, then clicking on "Path" => edit => new => right click => paste (pasting the path to the GHDL bin folder). Press ok to exit.
-   5. **Check Install :** Open cmd, type in : ghdl --version to check whether you successfully installed ghdl on your computer.
-3. **Now, you have successfully installed VUnit and GHDL**.
-4. **Github rproject repositery :** Download my repositery from github and copy the path to that folder.
-5. **Run the VUnit tests :** In cmd prompt :
-   1. **set the working directory** : Type the following command : *cd #path#* where #path# is the copied path.
-   2. **run Vunit test** : Type : python3 run.py (or python run.py) to run the tests.
+### How to run the code locally ?
 
-### Part 3 : Continuous Integration - CI on .github/workflows
-CI was a concept I have known for years but I never had the chance to design one from scratch. This project was the perfect opportunity to get back into the basics of it.
-The main purpose of my workflow was to create a CI pipeline that runs automatically the VUnit tests suite. In order to do so, I deep dived into VUnit and GHDL documentations and I learnt that both were available in, what's called a "ready-to-use" docker image. So, I had to work with docker images and containers.
-1. **Create a Dockerfile** : Creating a docker image was the start of the CI pipeline. To start, you have to install docker and to then design a Dockerfile (file without any extension). The Dockerfile is a must-do and must be placed in the same folder as the project. Copy the path to that folder.
-2. **Build and Push** : After creating my Dockerfile, in cmd prompt, type :
-   1. *cd #path#* where #path# is the copied path.
-   2. *docker build -t timer .* (this will actually build the docker image named timer
-   3. *docker tag timer <docker.username/timer:v1.0>*
-   4. *docker login -u <docker.username> -p <docker.token>*
-   5. *docker push <docker.username/timer:v1.0>*
-   6. docker rmi <docker.username/timer:v1.0>
-   7. docker login -u <docker.username> -p <<docker.token>
-   8. docker pull <docker.username/timer:v1.0>
-   9. docker run <docker.username/timer:v1.0>
-3. **Implementation in .github/workflows :** All these steps were repeated in the *.github/workflows* to make it work. I added two options to run the workflow, *on push* (meaning when the owner or someone who has access to that repositery modify, add or delete a file) or manually (*worflows_dispatch*)
+#### 1. Download my Github repository :
+1.1. First, download all of the different files available on my *Parametric_Timer* repository : you can click on the following link to download : *https://github.com/CyrETIENNE/Parametric_Timer/archive/refs/heads/main.zip* 
+
+1.2. Extract the .zip and place it wherever you want.
+
+#### 2. Install VUnit :
+2. On Windows 10/11 devices only, download Python 3.13 from the Microsoft Store. Open the command prompt (by typing ***cmd*** on the Windows search bar), type in the following command : *pip3 install VUnit_hdl. If an update of *pip3* is available, please do it.
+
+#### 3. Download and Install GHDL :
+3.1. To download GHDL, we must look at their github page. For windows devices users, we must look for a precompiled GHDL file. Hence, download such a file following this link : *https://github.com/ghdl/ghdl/releases/download/v4.0.0/ghdl-MINGW32.zip*
+
+3.2. Extract the .zip file and place it somewhere in your *C:disk*. Once placed, open the GHDL folder, you will see a subfolder named *bin*. Copy the path to that subfolder.
+
+3.3. Add this path to your system's global path following these steps :
+   1. Type in your Windows search bar : *environment variables*.
+   2. Click on : *edit environment variables for your system*.
+   3. Click once on *Path*.
+   4. Below, click on *edit*.
+   5. A new window should open. Click on *new*.
+   6. Do a right click on your mouse then paste the GHDL's bin subfolder path.
+   7. Click OK to exit.
+   8. Open the cmd again. Type in : *ghdl --version* to check if GHDL was successfully installed (you should see GHDL version number).
+   9. GHDL has been successfully installed.
+
+#### 4. Run the tests
+4.1. Open cmd. Set the working directory by typing : *cd <path>* where <path> is the path of my Github repository that you downloaded and extracted.
+
+4.2. Run the tests by typing : *python3 run.py*.
