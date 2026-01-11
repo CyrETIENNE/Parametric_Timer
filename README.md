@@ -25,23 +25,24 @@ The purpose of this project is to design a clean and maintainable parametric tim
 ### 3. Download and Install GHDL :
 3.1. To download GHDL, we must look at their github page. For windows devices users, we must look for a precompiled GHDL file. Hence, download such a file following this link : *https://github.com/ghdl/ghdl/releases/download/v4.0.0/ghdl-MINGW32.zip*
 
-3.2. Extract the .zip file and place it somewhere in your *C:disk*. Once placed, open the *GHDL folder*, you will see a subfolder named *bin*. **Copy the path to that subfolder**.
+3.2. Extract the .zip file and place it somewhere in your **C:disk**. Once placed, open the *GHDL folder*, you will see a subfolder named *bin*. **Open it and copy the path**. (the path should look like *'..\GHDL\bin'*)
 
-3.3. Add this path to your system's global path following these steps :
-   1. Type in your Windows search bar : *environment variables*.
-   2. Click on : *edit environment variables for your system*.
-   3. Click once on *Path*.
-   4. Below, click on *edit*.
-   5. A new window should open. Click on *new*.
-   6. Do a right click on your mouse then paste the GHDL's bin subfolder path.
-   7. Click OK to exit.
-   8. Open the cmd again. Type in : *ghdl --version* to check if GHDL was successfully installed (you should see GHDL version number).
-   9. GHDL has been successfully installed.
+3.3. Add this path to your **system's global Path** following these steps :
+   1. Type in your Windows search bar : *environment variables*
+   2. Click on : *edit environment variables for your system*. A window opens.
+   3. Click on : *environment variables*
+   4. Click once on *Path*
+   5. Below, click on *edit*
+   6. A new window should open. Click on *new*.
+   7. Do either **CTRL+V** or **right click on your mouse** to paste the GHDL's bin subfolder path.
+   8. Click OK to exit.
+   9. Open the cmd again. Type in : *ghdl --version* to check if GHDL was successfully installed (you should see GHDL version number).
+   10. GHDL has been successfully installed.
 
 ### 4. Run the tests
 4.1. Open *cmd*. Set the working directory by typing : *cd <path>* where <path> is the path of my Github repository that you downloaded and extracted.
 
-4.2. Run the tests by typing : *python3 run.py*.
+4.2. Run the tests by typing : *python3 run.py*
 
 ### 5. Remarks
 5.1. If you want to add custom testbenchs, you can simple copy one of my testbenchs code and change the *clk_freq_hz_g (in Hz)* and *delay_g (in ms)* parameters values using Notepad++, AMD Vivado, etc...
