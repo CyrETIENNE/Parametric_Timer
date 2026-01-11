@@ -5,14 +5,14 @@
  
 >AI use : **No**
 
-### Introduction
+## I. Introduction
 The purpose of this project is to design a clean and maintainable parametric timer using VHDL and testing it with VUnit and GHDL. Let's deep dive into the details of this project.
 
 **Assumptions :** 
 1. *clk_freq_hz_g : Expressed in MHz. Must be *natural positive*.
 2. *delay_g : Must be *expressed in ms* and must be *natural positive*.
 
-### How to run the code locally ?
+## II. How to run the code locally ?
 
 #### 1. Download my Github repository :
 1.1. First, download all of the different files available on my *Parametric_Timer* repository : you can click on the following link to download : *https://github.com/CyrETIENNE/Parametric_Timer/archive/refs/heads/main.zip* 
