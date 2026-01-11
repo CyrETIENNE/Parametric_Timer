@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  Running-VUnit_Tests:
+  Running_VUnit_Tests:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
