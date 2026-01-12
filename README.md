@@ -40,9 +40,11 @@ The purpose of this project is to design a clean and maintainable parametric tim
    10. GHDL has been successfully installed.
 
 ### 4. Run the tests
-4.1. Open **cmd**. Set the working directory by typing : **cd #path#** where **#path#** is the path to **my Github repository that you downloaded and extracted in the first step**.
+4.1. Locate the previously extracted Github repository in your files explorer (Should be named "**Parametric_timer-main**"). Open it until you see all of the files in it ('DOckerfile', 'run.py', etc..). Then, copy the path.
 
-4.2. Run the tests by typing : **python3 run.py**
+4.2. Open **cmd**. Set the working directory by typing : **cd #path#** where **#path#** is the path you just copied.
+
+4.3. Run the tests by typing : **python3 run.py**
 
 ### 5. Remarks
 5.1. If you want to add custom testbenchs, you can simple copy one of my testbenchs code and change the **clk_freq_hz_g (in Hz)** and **delay_g (in ms)** parameters values using Notepad++, AMD Vivado, etc...
