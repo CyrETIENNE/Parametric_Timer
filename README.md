@@ -1,4 +1,4 @@
-# Parametric_Timer
+# Parametric Timer
 >Author/engineer : **Cyril ETIENNE**
 
 >OS : **Windows 11**
